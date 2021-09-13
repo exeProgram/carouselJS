@@ -95,9 +95,13 @@ function sleep(ms) {
 
 var carouselIndex = 1;
 
-async function JCarousel(selector)
+function JCarousel(selector){
+    carouselIndex = 1;
+    JCarouselStart(selector)
+}
+
+async function JCarouselStart(selector)
 {
-    var carouselIndex = 1;
     var randomIdentifier = Math.floor(Math.random() * 1000000)
     // console.log(randomIdentifier)
 
