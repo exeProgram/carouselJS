@@ -2,6 +2,23 @@
 
 A Javascript Template to generate carousels simply
 
+
+# Documentation Sections
+
+[Instructions](#Instructions)
+[Minimum Required Parameters](#minimum-required-parameters)
+[Parameters](#Parameters)
+[Adding Box Content - Parameters](#Adding-Box-Content---Parameters)
+[Adding Box Content - Parameters Example](#Adding-Box-Content---Parameters-Example)
+[Adding Box Content - Content](#Adding-Box-Content---Content)
+[Adding Box Content - Content Example](#Adding-Box-Content---Content-Example)
+[Completed Full Example](#Completed-Full-Example)
+
+
+
+
+
+
 # Instructions
 
 * Add the 'JCarousel' folder to your project
@@ -46,7 +63,7 @@ A Javascript Template to generate carousels simply
 
   Example:
   ```javascript
-  width:
+  width: 100%
   ```
 
 
@@ -60,7 +77,7 @@ A Javascript Template to generate carousels simply
 
   Example:
   ```javascript
-  height:
+  height: 300px
   ```
 
 
@@ -79,6 +96,8 @@ A Javascript Template to generate carousels simply
   ** ⚠️ IMPORTANT ⚠️ **
     
     The `target:` only accepts **HTML ID Tags**, not class tags
+
+    ***************************
 
 
 
@@ -120,7 +139,7 @@ A Javascript Template to generate carousels simply
 
   Example:
   ```javascript
-  animationDuration: 3
+  animationDuration: 3 // 3 Seconds
   ```
 
 * **animationDirection**
@@ -153,6 +172,8 @@ A Javascript Template to generate carousels simply
 # Adding Box Content - Parameters
 
 For information about the Content parameters, [Go to "Adding Box Content - Content"](#Adding-Box-Content---Content)
+
+To see a finished example of Box Parameters *( without content)*, [Go to "Adding Box Content - Parameters Example](#Adding-Box-Content---Parameters-Example)
 
 * **backgroundImage**
 
@@ -212,8 +233,20 @@ For information about the Content parameters, [Go to "Adding Box Content - Conte
   
      At present, these are the only accepted values. More may be supported in the future
 
+# Adding Box Content - Parameters Example
+
+```javascript
+backgroundImage: ['photo-1.jfif', 'altText'], 
+backgroundColor: 'rgba(255,0,0)',
+backgroundDim: "rgba(0,0,0,0.5)",  
+contentAlignment: "center center",
+boxPadding: "10px 15px",
+content:[]
+```
 
 # Adding Box Content - Content
+
+To see what a `content:[]` looks like completed, [Go To Adding Box Content - Content Example](#Adding-Box-Content---Content-Example)
 
 * Inside of Objects created within the `content:[]` of `elements:[]`. You can use these parameters in order to add content to the Carousel box
 
@@ -277,6 +310,52 @@ For information about the Content parameters, [Go to "Adding Box Content - Conte
   {class:'aClass'}
   {id:'a-Id'}
   ```
+
+# Adding Box Content - Content Example
+
+```javascript
+content:[
+    {contentType: "h1", contentInnerHTML: "0", class:"carouselText", color: "white" ,id:"carouselId"},
+    {contentType: "a", contentInnerHTML: "applyNow", href: "https://github.com", class:"carouselText", color: "white"}
+], 
+```
+
+# Completed Full Example
+
+```javascript
+{
+    width: '100%',
+    height: '300px',
+    target: 'targetElement',
+    animationType: "auto",
+    animationPause: 5,
+    animationDuration: 3,
+    animationDirection: 'default',
+    elements:[
+        {
+            backgroundImage: ['photo', 'altText'], 
+            backgroundColor: 'rgba(255,0,0)',
+            backgroundDim: "rgba(0,0,0,0.5)",  
+            contentAlignment: "center center",
+            boxPadding: "10px 15px",
+            content:[
+                {contentType: "h1", contentInnerHTML: "0", class:"carouselText", color: "white" ,id:"carouselId"},
+                {contentType: "a", contentInnerHTML: "applyNow", href: "https://github.com", class:"carouselText", color: "white"}
+            ],  
+        },
+        {
+            backgroundImage: ['photo', 'altText'], 
+            backgroundColor: 'rgba(0,255,0)',
+            backgroundDim: "rgba(0,0,0,0.5)", 
+            contentAlignment: "center center",
+            boxPadding: "10px 15px",
+            content:[
+                {contentType: "h1", contentInnerHTML: "1", class:"carouselText",id:"carouselId",color: 'white'},
+                {contentType: "a", contentInnerHTML: "applyNow", href: "https://github.com", class:"carouselText", color: "white"}
+            ],  
+        },
+    ]
+}
 
 
   
