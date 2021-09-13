@@ -9,10 +9,8 @@ A Javascript Template to generate carousels simply
 [Minimum Required Parameters](#minimum-required-parameters)<br>
 [Parameters](#Parameters)<br>
 [Adding Box Content - Parameters](#Adding-Box-Content---Parameters)<br>
-[Adding Box Content - Parameters Example](#Adding-Box-Content---Parameters-Example)<br>
 [Adding Box Content - Content](#Adding-Box-Content---Content)<br>
-[Adding Box Content - Content Example](#Adding-Box-Content---Content-Example)<br>
-[Completed Full Example](#Completed-Full-Example)<br>
+[Completed Full Example](https://github.com/exeProgram/CarouselGenerator/blob/main/JS/JCarousel/exampleCode.js)<br>
 
 
 
@@ -233,17 +231,6 @@ To see a finished example of Box Parameters *( without content)*, [Go to "Adding
   
      At present, these are the only accepted values. More may be supported in the future
 
-# Adding Box Content - Parameters Example
-
-```javascript
-backgroundImage: ['photo', 'altText'], 
-backgroundColor: 'rgba(255,0,0)',
-backgroundDim: "rgba(0,0,0,0.5)",  
-contentAlignment: "center center",
-boxPadding: "10px 15px",
-content:[]
-```
-
 # Adding Box Content - Content
 
 To see what a `content:[]` looks like completed, [Go To Adding Box Content - Content Example](#Adding-Box-Content---Content-Example)
@@ -311,51 +298,10 @@ To see what a `content:[]` looks like completed, [Go To Adding Box Content - Con
   {id:'a-Id'}
   ```
 
-# Adding Box Content - Content Example
 
-```javascript
-content:[
-    {contentType: "h1", contentInnerHTML: "0", class:"carouselText", color: "white" ,id:"carouselId"},
-    {contentType: "a", contentInnerHTML: "applyNow", href: "https://github.com", class:"carouselText", color: "white"}
-], 
-```
+# Final Code Example
 
-# Completed Full Example
-
-```javascript
-{
-    width: '100%',
-    height: '300px',
-    target: 'targetElement',
-    animationType: "auto",
-    animationPause: 5,
-    animationDuration: 3,
-    animationDirection: 'default',
-    elements:[
-        {
-            backgroundImage: ['photo', 'altText'], 
-            backgroundColor: 'rgba(255,0,0)',
-            backgroundDim: "rgba(0,0,0,0.5)",  
-            contentAlignment: "center center",
-            boxPadding: "10px 15px",
-            content:[
-                {contentType: "h1", contentInnerHTML: "0", class:"carouselText", color: "white" ,id:"carouselId"},
-                {contentType: "a", contentInnerHTML: "applyNow", href: "https://github.com", class:"carouselText", color: "white"}
-            ],  
-        },
-        {
-            backgroundImage: ['photo', 'altText'], 
-            backgroundColor: 'rgba(0,255,0)',
-            backgroundDim: "rgba(0,0,0,0.5)", 
-            contentAlignment: "center center",
-            boxPadding: "10px 15px",
-            content:[
-                {contentType: "h1", contentInnerHTML: "1", class:"carouselText",id:"carouselId",color: 'white'},
-                {contentType: "a", contentInnerHTML: "applyNow", href: "https://github.com", class:"carouselText", color: "white"}
-            ],  
-        },
-    ]
-}
+See: [Final Code Example](https://github.com/exeProgram/CarouselGenerator/blob/main/JS/JCarousel/exampleCode.js)
 
 
   
