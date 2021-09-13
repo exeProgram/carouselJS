@@ -28,7 +28,7 @@ A Javascript Template to generate carousels simply
     })
   ```
 
-* Add atleast the [Minimum Required Parameters](#-minimum-required-parameters)
+* Add atleast the [Minimum Required Parameters](#minimum-required-parameters)
 * Add a `content:[]` to the object(s) in `elements:[]`. Add objects inside of Content using [Adding Box Content](#-adding-box-content).
 * Add other parameters as needed from [Parameters](#-parameters)
 
@@ -36,25 +36,38 @@ A Javascript Template to generate carousels simply
 
 # Minimum Required Parameters
 
+
+
+
 * **width:**
 
   This is the width of the Carousel. This value can be given in the same way as it is done in CSS
-    - e.g em, px, %, vw 
+  *e.g em, px, %, vw*
 
+  Example:
   ```javascript
   width:
   ```
 
+
+
+
+
 * **height:**
 
   This is the width of the Carousel. This value can be given in the same way as it is done in CSS
-    - e.g em, px, %, vw 
+  *e.g em, px, %, vw*
 
+  Example:
   ```javascript
   height:
   ```
 
-* A Target Element
+
+
+
+
+* **targetElement**
 
   This is where the Carousel will be generated / inserted
 
@@ -66,6 +79,9 @@ A Javascript Template to generate carousels simply
   ** ⚠️ IMPORTANT ⚠️ **
     
     The `target:` only accepts **HTML ID Tags**, not class tags
+
+
+
 
 * An `elements:[]` with atleast two objects inside
 
@@ -85,7 +101,7 @@ A Javascript Template to generate carousels simply
     animationType: 'manual'
     ```
 
-    ** ⚠️ PLEASE NOTE **
+    ** ⚠️ PLEASE NOTE ⚠️**
 
     Currently `animationType: "manual" is not functional. This is a planned future implementation
 
