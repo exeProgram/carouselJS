@@ -29,8 +29,8 @@ A Javascript Template to generate carousels simply
   ```
 
 * Add atleast the [Minimum Required Parameters](#minimum-required-parameters)
-* Add a `content:[]` to the object(s) in `elements:[]`. Add objects inside of Content using [Adding Box Content](#-adding-box-content).
-* Add other parameters as needed from [Parameters](#-parameters)
+* Add a `content:[]` to the object(s) in `elements:[]`. Add objects inside of Content using [Adding Box Content](#adding-box-content).
+* Add other parameters as needed from [Parameters](#parameters)
 
 
 
@@ -89,7 +89,7 @@ A Javascript Template to generate carousels simply
 
 # Parameters
 
-** ⚠️ This section does not cover the [Minimum Required Parameters](#-minimum-required-parameters) ⚠️ **
+** ⚠️ This section does not cover the [Minimum Required Parameters](#minimum-required-parameters) ⚠️ **
 
 * **animationType:**
 
@@ -152,7 +152,7 @@ A Javascript Template to generate carousels simply
 
 # Adding Box Content - Parameters
 
-For information about the Content parameters, [Go to "Adding Box Content - Content"](#-Adding-Box-Content---Content)
+For information about the Content parameters, [Go to "Adding Box Content - Content"](#Adding-Box-Content---Content)
 
 * **backgroundImage**
 
