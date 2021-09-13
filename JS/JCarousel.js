@@ -97,6 +97,7 @@ var carouselIndex = 1;
 
 async function JCarousel(selector)
 {
+    var carouselIndex = 1;
     var randomIdentifier = Math.floor(Math.random() * 1000000)
     // console.log(randomIdentifier)
 
@@ -176,6 +177,13 @@ async function JCarousel(selector)
             innerFlexContainer.style.display = "flex"
             innerFlexContainer.style.flexDirection = "column"
             innerFlexContainer.style.gap = "10px"
+            if(self.elements[item].flexFit){
+                if(self.elements[item].flexFit == "stretch"){
+                    innerFlexContainer.style.alignItems = "stretch"
+                }else if(self.elements[item].flexFit == "baseline"){
+                    innerFlexContainer.style.alignItems = "baseline"
+                }
+            }
             innerFlexContainer.style.position = "absolute"
             innerFlexContainer.style.top = "0"
             innerFlexContainer.classList.add("jc-Content-Container")
@@ -285,8 +293,8 @@ async function JCarousel(selector)
                 if(self.elements[item].content[contentElement].class){
                     newContentElement.classList.add(self.elements[item].content[contentElement].class)
                 }
-                if(self.elements[item].content[contentElement].colour){
-                    newContentElement.style.color = self.elements[item].content[contentElement].colour
+                if(self.elements[item].content[contentElement].color){
+                    newContentElement.style.color = self.elements[item].content[contentElement].color
                 }
                 
                 newContentElement.style.zIndex = 4
