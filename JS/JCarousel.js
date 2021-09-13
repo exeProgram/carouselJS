@@ -11,10 +11,11 @@ function moveItemRight(itemToMove,nextElement){
 }
 
 
-async function moveToBeginning(element){
+async function moveToBeginning(element,dataamount){
+    console.log(dataamount)
     await sleep(3000)
     element.style.transition = "0s"
-    element.style.transform = 'translateX(100%)'
+    element.style.transform = 'translateX(' + (100 * carouselIndex - 200) + '%)'
 }
 
 class carouselLoop{
@@ -44,7 +45,7 @@ class carouselLoop{
                             console.log(newNumber)
                             childNodes[idenElement].style.transform = 'translateX(' + newNumber + '%)'
                             if(newNumber == -100){
-                                moveToBeginning(childNodes[idenElement])
+                                moveToBeginning(childNodes[idenElement],data)
                             }else{
                                 childNodes[idenElement].style.transform = 'translateX(' + newNumber + '%)'
                             }
@@ -75,11 +76,10 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
+var carouselIndex = 1;
+
 async function JCarousel(selector)
 {
-
-    var carouselIndex = 0;
-
     var randomIdentifier = Math.floor(Math.random() * 1000000)
     // console.log(randomIdentifier)
 
