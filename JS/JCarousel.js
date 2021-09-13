@@ -16,8 +16,12 @@ var animationDuration = 3000
 var animationPause = 3000
 var warningsEnabled = true
 
+var currentCarouselCount = 1
+
+var targetedElements = []
+
 async function moveToBeginning(element,dataamount){
-    console.log(dataamount)
+    // console.log(dataamount)
     await sleep(animationDuration)
     element.style.transition = "0s"
     element.style.transform = 'translateX(' + (100 * carouselIndex - 200) + '%)'
@@ -30,9 +34,22 @@ function callWarning(message){
     }
 }
 
-function callError(message){
-    console.error(message)
+function removeAllOnError(){
+    var carousels = document.querySelectorAll(".jc-active")
+    for(const carousel in carousels){
+        if(carousels[carousel].tagName == "DIV"){
+            carousels[carousel].parentElement.removeChild(carousels[carousel])
+        }
+    }
 }
+
+function callError(message,remAll){
+    console.error(message)
+    if(remAll === true){
+        removeAllOnError()
+    } 
+}
+
 
 
 
@@ -97,12 +114,18 @@ var carouselIndex = 1;
 
 function JCarousel(selector){
     carouselIndex = 1;
-    JCarouselStart(selector)
+    if(targetedElements.includes(selector.target) == false){
+        targetedElements.push(selector.target)
+        JCarouselStart(selector)
+    }else{
+        callError("JCarousel ERROR - Two elements cannot have the same target", true)
+    }
 }
 
 async function JCarouselStart(selector)
 {
-    var randomIdentifier = Math.floor(Math.random() * 1000000)
+    var randomIdentifier = String(currentCarouselCount).padStart(4, '0')
+    currentCarouselCount++
     // console.log(randomIdentifier)
 
     if(selector.warnings){
