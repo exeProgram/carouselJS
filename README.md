@@ -1,2 +1,2 @@
 # CarouselGenerator
-A Javascript Template to Simply Generate Carousels
+A Javascript Template to generate carousels simply
