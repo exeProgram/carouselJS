@@ -1,12 +1,13 @@
 console.log(JCarousel(
     {
         width: '100%',
-        height: '100vh',
+        height: '300px',
         target: 'targetElement',
         animationType: "auto",
         animationPause: 5,
         animationDuration: 3,
         animationDirection: 'default',
+        flexFit: "stretch",
         elements:[
             {
                 backgroundImage: ['photo-1.jfif', 'altText'], 
@@ -15,8 +16,8 @@ console.log(JCarousel(
                 contentAlignment: "center center",
                 boxPadding: "10px 15px",
                 content:[
-                    {contentType: "h1", contentInnerHTML: "0", class:"carouselText", colour: "white" ,id:"hi"},
-                    {contentType: "a", contentInnerHTML: "applyNow", href: "https://www.google.co.uk", class:"carouselText", colour: "white"}
+                    {contentType: "h1", contentInnerHTML: "0", class:"carouselText", color: "white" ,id:"hi"},
+                    {contentType: "a", contentInnerHTML: "applyNow", href: "https://www.google.co.uk", class:"carouselText", color: "white"}
                 ],  
             },
             {
@@ -26,19 +27,18 @@ console.log(JCarousel(
                 contentAlignment: "center center",
                 boxPadding: "10px 15px",
                 content:[
-                    {contentType: "h1", contentInnerHTML: "1", class:"carouselText", colour: "white" ,id:"hi"},
-                    {contentType: "a", contentInnerHTML: "applyNow", href: "https://www.google.co.uk", class:"carouselText", colour: "white"}
+                    {contentType: "h1", contentInnerHTML: "1", class:"carouselText",id:"hi",color: 'white'},
+                    {contentType: "a", contentInnerHTML: "applyNow", href: "https://www.google.co.uk", class:"carouselText", color: "white"}
                 ],  
             },
-            {
-                backgroundColor: 'rgb(0,0,255)',
-                contentAlignment: "center center",
-                boxPadding: "0px 0px",
-                content:[
-                    {contentType:"a",contentInnerHTML:"Hi", href:"www.amazon.co.uk", id:"carousel-link",color: 'rgb(255,255,0)'},
-                    {contentType:"h1",contentInnerHTML:"JOIN US", color: 'rgb(0,255,0)'}
-                ]
-            }
         ]
     }
 ))
+
+
+
+
+
+
+
+
