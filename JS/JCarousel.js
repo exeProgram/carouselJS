@@ -1,31 +1,43 @@
-function moveItemLeft(itemToMove){
+function moveItemLeft(itemToMove,nextElement){
+    console.log("moving")
     itemToMove.style.transform = 'translateX(-100%)'
+    nextElement.style.transform = 'translateX(0%)'
 }
 
-function moveItemRight(itemToMove){
+function moveItemRight(itemToMove,nextElement){
+    console.log("moving")
     itemToMove.style.transform = 'translateX(100%)'
+    nextElement.style.transform = 'translateX(0%)'
 }
 
+// class carouselLoop{
+//     constructor(element,identifier){
+//         var carouselActive = true
+//         while(carouselActive == true){
+//             var elements = element.childNodes
+//             var totalElements = elements.length
+//             var counter = 0;
+//             if(counter < totalElements){
+//                 console.log(counter)
+//                 var currentCounter = counter
+//                 var nextCounter = counter++
+//                 var prevElement = elements[currentCounter]
+//                 var nextElement = elements[nextCounter]
+//                 setTimeout(moveItemLeft(prevElement,nextElement),5000)
+//                 counter++
+//             }else{
+//                 var currentCounter = counter
+//                 var nextCounter = counter--
+//                 var prevElement = elements[currentCounter]
+//                 var nextElement = elements[nextCounter]
+//                 setTimeout(moveItemRight(prevElement,nextElement),5000)
+//             }
+//             console.log(elements)
 
-class carouselLoop{
-    constructor(element,identifier){
-        var carouselActive = true
-        while(carouselActive == true){
-            var elements = element.childNodes
-            var totalElements = elements.length
-            var counter = 0;
-            if(counter < totalElements){
-                var prevElement = elements[counter]
-                var nextElement = elements[counter + 1]
-            }else{
-                counter = 0
-            }
-            console.log(elements)
-            counter++
-            break
-        }
-    }
-}
+//         }
+//     }
+// }
+
 
 function JCarousel(selector)
 {
@@ -40,11 +52,12 @@ function JCarousel(selector)
         width: selector.width,
         height: selector.height,
         target: selector.target,
-        elements: selector.elements
+        elements: selector.elements,
+        animationType: selector.animationType
     }
 
     var selectedElement = document.getElementById(self.target)
-    selectedElement.classList.add("J-Carousel-Active")
+    selectedElement.classList.add("jc-active")
     selectedElement.style.width = self.width
     selectedElement.style.height = self.height
     selectedElement.style.position = "relative"
@@ -55,14 +68,16 @@ function JCarousel(selector)
 
     for(const item in self.elements){
         var createdContainer = document.createElement('div')
-        createdContainer.classList.add('J-Element')
+        createdContainer.classList.add('jc-element')
         selectedElement.appendChild(createdContainer)
         createdContainer.style.width = "100%"
         createdContainer.style.height = "100%"
         createdContainer.style.position = "absolute"
         createdContainer.style.overflow = "hidden"
         createdContainer.setAttribute('data-identifier', randomIdentifier)
-        createdContainer.id = "data-order-" + carouselIndex
+        createdContainer.id = randomIdentifier + "-data-order-" + carouselIndex
+        createdContainer.style.transition = "1.25s"
+        createdContainer.style.transitionProperty = ""
        
        
         var innerFlexContainer = document.createElement('div')
@@ -71,7 +86,7 @@ function JCarousel(selector)
         innerFlexContainer.style.gap = "10px"
         innerFlexContainer.style.position = "absolute"
         innerFlexContainer.style.top = "0"
-        innerFlexContainer.classList.add("J-Content-Container")
+        innerFlexContainer.classList.add("jc-Content-Container")
 
         if(self.elements[item].boxPadding){
             var splitBoxPadding = self.elements[item].boxPadding.toLowerCase().split(" ")
@@ -203,13 +218,28 @@ function JCarousel(selector)
 
         }
 
+
         console.log(carouselIndex)
 
         createdContainer.style.transform = 'translateX(' + (100 * carouselIndex) + '%)'
 
         carouselIndex++
 
-        var loopEnabled = new carouselLoop(selectedElement,randomIdentifier)
+    }
+
+    if(self.animationType){
+        if(self.animationType.toLowerCase() == "auto"){
+            var newStylesheet = document.createElement('style')
+            newStylesheet.id = 'jc-' + randomIdentifier + "-stylesheet"
+            newStylesheet.innerHTML = "h1{ color: green }"
+            document.body.appendChild(newStylesheet)
+            console.log("auto")
+
+        }else if(self.animationType.toLowerCase() == "manual"){
+
+        }else{
+            console.error("Animation type invalid")
+        }
     }
     
 

@@ -3,6 +3,7 @@ console.log(JCarousel(
         width: '100%',
         height: '300px',
         target: 'targetElement',
+        animationType: "auto",
         elements:[
             {
                 background: ['photo-1.jfif', 'altText'], 
