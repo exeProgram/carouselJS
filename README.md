@@ -236,7 +236,7 @@ To see a finished example of Box Parameters *( without content)*, [Go to "Adding
 # Adding Box Content - Parameters Example
 
 ```javascript
-backgroundImage: ['photo-1.jfif', 'altText'], 
+backgroundImage: ['photo', 'altText'], 
 backgroundColor: 'rgba(255,0,0)',
 backgroundDim: "rgba(0,0,0,0.5)",  
 contentAlignment: "center center",
