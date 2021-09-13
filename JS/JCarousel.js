@@ -248,6 +248,13 @@ function JCarousel(selector)
             newStylesheet.id = 'jc-' + randomIdentifier + "-stylesheet"
             newStylesheet.innerHTML = "h1{ color: green }"
             document.body.appendChild(newStylesheet)
+            var elements = selectedElement.childNodes
+            var intElementCounter = 0
+            for(const passThrough in elements){
+                var elementToAffect = elements[passThrough]
+
+                intElementCounter++
+            }
             console.log("auto")
 
         }else if(self.animationType.toLowerCase() == "manual"){
