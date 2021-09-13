@@ -1,4 +1,4 @@
-console.log(JCarousel(
+JCarousel(
     {
         width: '100%',
         height: '300px',
@@ -9,30 +9,30 @@ console.log(JCarousel(
         animationDirection: 'default',
         elements:[
             {
-                backgroundImage: ['photo-1.jfif', 'altText'], 
+                backgroundImage: ['photo', 'altText'], 
                 backgroundColor: 'rgba(255,0,0)',
                 backgroundDim: "rgba(0,0,0,0.5)",  
                 contentAlignment: "center center",
                 boxPadding: "10px 15px",
                 content:[
-                    {contentType: "h1", contentInnerHTML: "0", class:"carouselText", color: "white" ,id:"hi"},
-                    {contentType: "a", contentInnerHTML: "applyNow", href: "https://www.google.co.uk", class:"carouselText", color: "white"}
+                    {contentType: "h1", contentInnerHTML: "", class:"", color: "white" ,id:""},
+                    {contentType: "a", contentInnerHTML: "", href: "https://github.com", class:"", color: "white"}
                 ],  
             },
             {
-                backgroundImage: ['photo-2.jfif', 'altText'], 
+                backgroundImage: ['photo', 'altText'], 
                 backgroundColor: 'rgba(0,255,0)',
                 backgroundDim: "rgba(0,0,0,0.5)", 
                 contentAlignment: "center center",
                 boxPadding: "10px 15px",
                 content:[
-                    {contentType: "h1", contentInnerHTML: "1", class:"carouselText",id:"hi",color: 'white'},
-                    {contentType: "a", contentInnerHTML: "applyNow", href: "https://www.google.co.uk", class:"carouselText", color: "white"}
+                    {contentType: "h1", contentInnerHTML: "", class:"",id:"",color: 'white'},
+                    {contentType: "a", contentInnerHTML: "", href: "https://github.com", class:"", color: "white"}
                 ],  
             },
         ]
     }
-))
+)
 
 
 
