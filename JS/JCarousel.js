@@ -10,36 +10,72 @@ function moveItemRight(itemToMove,nextElement){
     nextElement.style.transform = 'translateX(0%)'
 }
 
-// class carouselLoop{
-//     constructor(element,identifier){
-//         var carouselActive = true
-//         while(carouselActive == true){
-//             var elements = element.childNodes
-//             var totalElements = elements.length
-//             var counter = 0;
-//             if(counter < totalElements){
-//                 console.log(counter)
-//                 var currentCounter = counter
-//                 var nextCounter = counter++
-//                 var prevElement = elements[currentCounter]
-//                 var nextElement = elements[nextCounter]
-//                 setTimeout(moveItemLeft(prevElement,nextElement),5000)
-//                 counter++
-//             }else{
-//                 var currentCounter = counter
-//                 var nextCounter = counter--
-//                 var prevElement = elements[currentCounter]
-//                 var nextElement = elements[nextCounter]
-//                 setTimeout(moveItemRight(prevElement,nextElement),5000)
-//             }
-//             console.log(elements)
 
-//         }
-//     }
-// }
+async function moveToBeginning(element){
+    await sleep(3000)
+    element.style.transition = "0s"
+    element.style.transform = 'translateX(100%)'
+}
+
+class carouselLoop{
+    constructor(identifier){
+        var identification = identifier
+        var identifyElement = document.getElementById("J-Carousel-Identifier-" + identification)
+        var childNodes = identifyElement.children
+        console.log(identifier)
+        async function run(){
+            var loopsActive = true
+            var idActive = 0
+            while(loopsActive){
+                for(const idenElement in childNodes){
+                    if(childNodes[idenElement].tagName){
+                        if(childNodes[idenElement].tagName.toLowerCase() == "div"){
+                            console.log(childNodes[idenElement])
+                            var getTransform = childNodes[idenElement].style.transform
+                            var splitS1 = getTransform.split("(")
+                            var splitS2 = splitS1[1].split("%)")
+                            var data = parseInt(childNodes[idenElement].id.split("-")[3])
+                            console.log(idActive)
+                            console.log(data)
+                            var integerConvert = parseInt(splitS2)
+
+                            childNodes[idenElement].style.transition = "3s"
+                            var newNumber = integerConvert - 100
+                            console.log(newNumber)
+                            childNodes[idenElement].style.transform = 'translateX(' + newNumber + '%)'
+                            if(newNumber == -100){
+                                moveToBeginning(childNodes[idenElement])
+                            }else{
+                                childNodes[idenElement].style.transform = 'translateX(' + newNumber + '%)'
+                            }
 
 
-function JCarousel(selector)
+
+
+                            console.log(integerConvert)
+                        }
+                    }
+                }
+                if(idActive <= childNodes.length){
+                    idActive++
+                }else{
+                    idActive = 0
+                }
+
+                console.log("hi")
+                await sleep(5000)
+            }
+        }
+        run()
+    }
+}
+
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+async function JCarousel(selector)
 {
 
     var carouselIndex = 0;
@@ -244,18 +280,22 @@ function JCarousel(selector)
 
     if(self.animationType){
         if(self.animationType.toLowerCase() == "auto"){
-            var newStylesheet = document.createElement('style')
-            newStylesheet.id = 'jc-' + randomIdentifier + "-stylesheet"
-            newStylesheet.innerHTML = "h1{ color: green }"
-            document.body.appendChild(newStylesheet)
-            var elements = selectedElement.childNodes
-            var intElementCounter = 0
-            for(const passThrough in elements){
-                var elementToAffect = elements[passThrough]
+            var animationRun = new carouselLoop(randomIdentifier)
+            // var newStylesheet = document.createElement('style')
+            // newStylesheet.id = 'jc-' + randomIdentifier + "-stylesheet"
+            // newStylesheet.innerHTML = ""
+            // document.body.appendChild(newStylesheet)
+            // var elements = selectedElement.childNodes
+            // var intElementCounter = 0
+            // for(const passThrough in elements){
+            //     var elementToAffect = elements[passThrough]
+            //     var transformPercentage = 100 * intElementCounter
+            //     newStylesheet.innerHTML += '@keyframes animIn'
+            //     newStylesheet.innerHTML += elements[passThrough].id + '{ transform: translateX(' + transformPercentage + '%)}'
 
-                intElementCounter++
-            }
-            console.log("auto")
+            //     intElementCounter++
+            // }
+            // console.log("auto")
 
         }else if(self.animationType.toLowerCase() == "manual"){
 
