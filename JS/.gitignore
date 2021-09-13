@@ -1,0 +1,4 @@
+# Resources used to build / test the Javascript that are not needed on GitHub
+
+*.jfif
+*.html
