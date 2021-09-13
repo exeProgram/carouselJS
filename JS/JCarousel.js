@@ -45,7 +45,9 @@ function JCarousel(selector)
     var carouselIndex = 0;
 
     var randomIdentifier = Math.floor(Math.random() * 1000000)
-    console.log(randomIdentifier)
+    // console.log(randomIdentifier)
+
+
 
 
     const self = {
@@ -55,6 +57,19 @@ function JCarousel(selector)
         elements: selector.elements,
         animationType: selector.animationType
     }
+
+    // Basic Error Checking
+
+    function errorChecking(){
+        if(!selector.width){
+            console.error("Width not specified")
+        }
+        if(!selector.height){
+            console.error("Height not specified")
+        }
+    }
+
+    // Carousel Generator
 
     var selectedElement = document.getElementById(self.target)
     selectedElement.classList.add("jc-active")
@@ -94,7 +109,7 @@ function JCarousel(selector)
                 if(splitBoxPadding[pxItem].includes("px")){
                     var splitItemTwo = splitBoxPadding[pxItem].split("px")
                     var parsedIntSplit = parseInt(splitItemTwo[0])
-                    console.log(parsedIntSplit)
+                    // console.log(parsedIntSplit)
                     if(pxItem == 0){
                         var halfedSplit = parsedIntSplit / 2
                         innerFlexContainer.style.width = 'calc(100% - ' + parsedIntSplit + 'px)'
@@ -219,7 +234,7 @@ function JCarousel(selector)
         }
 
 
-        console.log(carouselIndex)
+        // console.log(carouselIndex)
 
         createdContainer.style.transform = 'translateX(' + (100 * carouselIndex) + '%)'
 
