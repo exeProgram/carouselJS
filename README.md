@@ -5,14 +5,14 @@ A Javascript Template to generate carousels simply
 
 # Documentation Sections
 
-[Instructions](#Instructions)
-[Minimum Required Parameters](#minimum-required-parameters)
-[Parameters](#Parameters)
-[Adding Box Content - Parameters](#Adding-Box-Content---Parameters)
-[Adding Box Content - Parameters Example](#Adding-Box-Content---Parameters-Example)
-[Adding Box Content - Content](#Adding-Box-Content---Content)
-[Adding Box Content - Content Example](#Adding-Box-Content---Content-Example)
-[Completed Full Example](#Completed-Full-Example)
+[Instructions](#Instructions)<br>
+[Minimum Required Parameters](#minimum-required-parameters)<br>
+[Parameters](#Parameters)<br>
+[Adding Box Content - Parameters](#Adding-Box-Content---Parameters)<br>
+[Adding Box Content - Parameters Example](#Adding-Box-Content---Parameters-Example)<br>
+[Adding Box Content - Content](#Adding-Box-Content---Content)<br>
+[Adding Box Content - Content Example](#Adding-Box-Content---Content-Example)<br>
+[Completed Full Example](#Completed-Full-Example)<br>
 
 
 
