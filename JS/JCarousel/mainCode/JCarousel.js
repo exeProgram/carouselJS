@@ -204,13 +204,13 @@ async function JCarouselStart(selector)
             innerFlexContainer.style.display = "flex"
             innerFlexContainer.style.flexDirection = "column"
             innerFlexContainer.style.gap = "10px"
-            if(self.elements[item].flexFit){
-                if(self.elements[item].flexFit == "stretch"){
-                    innerFlexContainer.style.alignItems = "stretch"
-                }else if(self.elements[item].flexFit == "baseline"){
-                    innerFlexContainer.style.alignItems = "baseline"
-                }
-            }
+            // if(self.elements[item].flexFit){
+            //     if(self.elements[item].flexFit == "stretch"){
+            //         innerFlexContainer.style.alignItems = "stretch"
+            //     }else if(self.elements[item].flexFit == "baseline"){
+            //         innerFlexContainer.style.alignItems = "baseline"
+            //     }
+            // }
             innerFlexContainer.style.position = "absolute"
             innerFlexContainer.style.top = "0"
             innerFlexContainer.classList.add("jc-Content-Container")
@@ -322,6 +322,9 @@ async function JCarouselStart(selector)
                 }
                 if(self.elements[item].content[contentElement].color){
                     newContentElement.style.color = self.elements[item].content[contentElement].color
+                }
+                if(self.elements[item].content[contentElement].background){
+                    newContentElement.style.background = self.elements[item].content[contentElement].background
                 }
                 
                 newContentElement.style.zIndex = 4

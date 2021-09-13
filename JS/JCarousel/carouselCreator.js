@@ -7,7 +7,6 @@ console.log(JCarousel(
         animationPause: 5,
         animationDuration: 3,
         animationDirection: 'default',
-        flexFit: "stretch",
         elements:[
             {
                 backgroundImage: ['photo-1.jfif', 'altText'], 
