@@ -1,5 +1,5 @@
-# carouselJS
-Javascript Code that generates a carousel based off of given parameters
+# Description
+Generates a image carousel based off of given parameters
 
 # Contribution
 
